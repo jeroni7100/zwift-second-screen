@@ -142,7 +142,7 @@ class Rider extends EventEmitter {
             playerType: rider.playerType,
             contryAlpha3: rider.countryAlpha3,
             countryCode: rider.countryCode,
-            TEMP: 'TEMP', weight: rider.weight }, status);
+            weight: rider.weight }, status);
           //   distance: status.distance,
           //   speed: status.speed,
           //   power: status.power,
@@ -177,9 +177,8 @@ class Rider extends EventEmitter {
         });
   }
 
-  addStatic(status) {
+  addExtra(status) {
       const extra = {
-          // wattsPerKG: this.getWattsPerKg(status.power, this.static.weight),
           roadID: status.roadID,
           rideOns: status.rideOns,
           isTurning: status.isTurning,
@@ -199,7 +198,7 @@ class Rider extends EventEmitter {
       this.account.getWorld(1).riderStatus(id)
           .then(status => {
             // resolve(status);
-            resolve(this.addStatic(status));
+            resolve(this.addExtra(status));
           })
           .catch(ex => {
             console.log(`Failed to get status for ${id}${errorMessage(ex)}`);
