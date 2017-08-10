@@ -87,7 +87,7 @@ class PooledRider {
             rideOns: status.rideOns,
             isTurning: status.isTurning,
             isForward: status.isForward,
-            sport: ~~status.f31
+            sport: status.sport
         };
         return Object.assign({}, status, extra);
     }
