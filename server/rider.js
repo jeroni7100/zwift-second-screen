@@ -144,6 +144,7 @@ class Rider extends EventEmitter {
             distance: status.distance,
             speed: status.speed,
             power: status.power,
+            cadence: status.cadence,
             time: status.time,
             climbing: status.climbing,
             x: status.x,
